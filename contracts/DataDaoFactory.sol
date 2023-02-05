@@ -21,7 +21,7 @@ contract DataDoaFactory{
 
     // owner address will be used check which address own/create a new dataDAO
     // mapping(ownerAddress => smart contract address)
-    mapping(address => address) public searchByAddress;
+    mapping(address => address[]) public searchByAddress;
 
     /**
      * @dev constructor to get the owner address of this contract factory
@@ -49,7 +49,7 @@ contract DataDoaFactory{
         );
 
         // search the profile by using owner address
-        searchByAddress[msg.sender] = address(dataDao);
+        searchByAddress[msg.sender].push(address(dataDao));
     }
 
     
@@ -64,18 +64,26 @@ contract DataDoaFactory{
         return address(this);
     }
 
-     // function to withdraw the fund from contract factory
-    function withdraw(uint256 amount) external payable {
+     /**
+      * @dev = function to withdraw the fund from contract factory to dataDaoFactoryOwner
+      * @param _amount = amount user want to withdraw
+      */
+    function withdraw(uint256 _amount) external payable {
         require(msg.sender == dataDaoFactoryOwner, "ONLY_ONWER_CAN_CALL_FUNCTION");
         // sending money to contract owner
-        require(address(this).balance >= amount, "not_enough_funds");
-        (bool success, ) = dataDaoFactoryOwner.call{value: amount}("");
+        require(address(this).balance >= _amount, "not_enough_funds");
+        (bool success, ) = dataDaoFactoryOwner.call{value: _amount}("");
         require(success, "TRANSFER_FAILED");
     }
 
     // get the address of DataDaoFactory contract owner
     function getAddressOfDataDaoFactoryOwner() public view returns (address) {
         return dataDaoFactoryOwner;
+    }
+
+    // get all the DataDAO addresses deployed by this address
+    function getSearchByAddress(address _address) public view returns(address[] memory){
+        return searchByAddress[_address];
     }
 
     // receive function is used to receive Ether when msg.data is empty
