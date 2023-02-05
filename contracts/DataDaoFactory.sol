@@ -10,15 +10,6 @@ contract DataDoaFactory{
     // number of DataDAO created
     uint256 public numOfDataDao;
 
-    // struct to store all the data of dataDao and dataDaoFactory contract
-    struct dataDaoFactoryStruct {
-        address dataDaoOwner;
-        address dataDaoFactoryOwner;
-    }
-
-    // searching the struct data of DataDao and DataDoaFactory using owner address
-    mapping(address => dataDaoFactoryStruct) public allDataDaos;
-
     // owner address will be used check which address own/create a new dataDAO
     // mapping(ownerAddress => smart contract address)
     mapping(address => address[]) public searchByAddress;
@@ -40,14 +31,6 @@ contract DataDoaFactory{
         );
         // Increment the number of DataDao
         numOfDataDao++;
-
-        // Add the new DataDAO to the mapping
-        allDataDaos[_dataDaoOwner] = (
-            dataDaoFactoryStruct(
-                _dataDaoOwner, // address of dataDAO owner 
-                address(this)
-            )
-        );
 
         // search the profile by using owner address
         searchByAddress[_dataDaoOwner].push(address(dataDao));
@@ -72,8 +55,13 @@ contract DataDoaFactory{
         return address(this).balance;
     }
 
-    // get the address of this contract
-    function getAddressOfContract() public view returns (address) {
+    // get the total Number of Data DAOs
+    function getNumOfDataDao() public view returns (uint256) {
+        return numOfDataDao;
+    }
+
+    // get the address of factory contract
+    function getAddressOfFactoryContract() public view returns (address) {
         return address(this);
     }
 
