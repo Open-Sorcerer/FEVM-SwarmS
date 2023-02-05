@@ -1,6 +1,6 @@
 // first deploy factory contract
-// then we need to deploy DataDao contract
-// then put contract address on MockMarket
+// then deploy DataDao contract from factory contract
+// then put "DataDao contract" address on MockMarket contract 
 
 // SPDX-License-Identifier: UNLICENSED
 
@@ -57,6 +57,7 @@ contract DataDAO {
 
 /**
  * @dev constructor: to set the owner address
+ * @param _owner : get the address of the DATADAO owner from factory contract
  */
 constructor(address _owner) {
      require(_owner != address(0), "invalid owner!");
