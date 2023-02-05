@@ -1,6 +1,6 @@
 // first deploy factory contract
 // then deploy DataDao contract from factory contract
-// then put "DataDao contract" address on MockMarket contract 
+// then put "DataDAO contract" address on MockMarket contract 
 
 // SPDX-License-Identifier: UNLICENSED
 
