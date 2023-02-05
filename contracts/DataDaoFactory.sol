@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.13;
 
 import "./DataDAO.sol";
 
@@ -32,6 +32,7 @@ contract DataDoaFactory{
 
     /**
      * @dev function to create the contract DATADAO
+     * @param _dataDaoOwner = address of DATADAO owner
      */
     function createDataDao(address _dataDaoOwner) public {
         DataDAO dataDao = new DataDAO(
@@ -52,18 +53,6 @@ contract DataDoaFactory{
         searchByAddress[msg.sender].push(address(dataDao));
     }
 
-    
-
-    // get the balance of the contract
-    function getContractBalance() public view returns (uint256) {
-        return address(this).balance;
-    }
-
-    // get the address of this contract
-    function getAddressOfContract() public view returns (address) {
-        return address(this);
-    }
-
      /**
       * @dev = function to withdraw the fund from contract factory to dataDaoFactoryOwner
       * @param _amount = amount user want to withdraw
@@ -74,6 +63,18 @@ contract DataDoaFactory{
         require(address(this).balance >= _amount, "not_enough_funds");
         (bool success, ) = dataDaoFactoryOwner.call{value: _amount}("");
         require(success, "TRANSFER_FAILED");
+    }
+
+    
+    // Getter Function
+    // get the balance of the contract
+    function getContractBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
+
+    // get the address of this contract
+    function getAddressOfContract() public view returns (address) {
+        return address(this);
     }
 
     // get the address of DataDaoFactory contract owner
