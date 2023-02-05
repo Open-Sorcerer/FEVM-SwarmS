@@ -69,7 +69,10 @@ constructor(address _owner) {
  */
     function createCIDProposal(bytes calldata cidraw, uint size) public {
         proposalCount++;
-        Proposal memory proposal = Proposal(proposalCount, msg.sender, cidraw, size, 0, 0, block.timestamp, block.timestamp + 1 hours);
+        // testing
+        Proposal memory proposal = Proposal(proposalCount, msg.sender, cidraw, size, 0, 0, block.timestamp, block.timestamp + 5 minutes);
+        // production
+        // Proposal memory proposal = Proposal(proposalCount, msg.sender, cidraw, size, 0, 0, block.timestamp, block.timestamp + 24 hours);
         proposals[proposalCount] = proposal;
         cidSet[cidraw] = true;
         cidSizes[cidraw] = size;
