@@ -42,15 +42,15 @@ contract DataDoaFactory{
         numOfDataDao++;
 
         // Add the new DataDAO to the mapping
-        allDataDaos[msg.sender] = (
+        allDataDaos[_dataDaoOwner] = (
             dataDaoFactoryStruct(
-                msg.sender, // address of dataDAO owner 
+                _dataDaoOwner, // address of dataDAO owner 
                 address(this)
             )
         );
 
         // search the profile by using owner address
-        searchByAddress[msg.sender].push(address(dataDao));
+        searchByAddress[_dataDaoOwner].push(address(dataDao));
     }
 
      /**
