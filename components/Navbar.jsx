@@ -32,7 +32,7 @@ const Navbar = (props) => {
     },
   });
   const { connect } = useConnect({
-    chainId: 31415,
+    chainId: 3141,
     connector: new InjectedConnector(),
     onSuccess() {
       toast.success("Account connected!", {
