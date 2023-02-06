@@ -10,7 +10,7 @@ const chainID = 31415;
 
 export const useSmartContract = () => {
   const provider = new ethers.providers.JsonRpcProvider(
-    "https://wallaby.node.glif.io/rpc/v0"
+    "https://api.hyperspace.node.glif.io/rpc/v1"
   );
 
   var privateKey =
