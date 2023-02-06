@@ -2,8 +2,6 @@
 
 SwarmS is a No Code Tool to create Data DAOs. With SwarmS you can take your Swarm on chain quickly to manage data along with governance.
 
-![SwarmS](https://user-images.githubusercontent.com/71517788/205465112-8cbbbe99-d909-4f16-b672-d5e013d9f86d.png)
-
 ## Features
 
 - Managing Proposals
@@ -17,9 +15,9 @@ SwarmS is a No Code Tool to create Data DAOs. With SwarmS you can take your Swar
 - Streaming funds to make perpetual storage functionality
 
 ## Deployments:
-- Deployed Valist link: [https://bafybeiblkpu3lbde4jgopk36e2y5ggcti6olyzgpdisgcblcem24ls5cku.ipfs.gateway.valist.io/](https://bafybeiblkpu3lbde4jgopk36e2y5ggcti6olyzgpdisgcblcem24ls5cku.ipfs.gateway.valist.io/)
-- DataDaoFactory EVM Contract address: 0xE590D9C29282f805B0c4a90F9Cc1981DAc8B8F22
-- DataDaoFactory Filecoin Address: t410f4wintqusql4almgevehzzqmydwwixdzcrjfxahi
+
+- DataDaoFactory EVM Contract address: 0xBF431d2b3063aE771F51F0f281fd4c7CAf732717
+- DataDaoFactory Filecoin Address: 0x791a9b3c1ABDb2b755aEd0614F36acD4818da131
 
 ## Context on FVM
 
