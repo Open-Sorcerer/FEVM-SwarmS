@@ -20,7 +20,7 @@ const Home = (props) => {
             </div>
             <p className="text-white text-xl font-semibold">
               SwarmS is a No Code Tool to create Data DAOs. With SwarmS you can
-              take your crew on chain quickly to manage data along with
+              take your Swarm on chain quickly to manage data along with
               governance.
             </p>
           </div>

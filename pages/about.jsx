@@ -18,7 +18,7 @@ const About = (props) => {
           </div>
           <p className="text-white text-xl font-semibold">
             SwarmS is a No Code Tool to create Data DAOs. With SwarmS you can take
-            your crew on chain quickly to manage data along with governance. ##
+            your Swarm on chain quickly to manage data along with governance. ##
             Features - Managing Proposals - OnChain Voting - Execution of
             proposals - Storing data as per the voting results
           </p>

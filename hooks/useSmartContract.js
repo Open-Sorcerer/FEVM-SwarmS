@@ -6,7 +6,7 @@ import { ethers } from "ethers";
 import { useEnsAddress } from "wagmi";
 
 const dataDaoFactoryAddress = Contracts.DataDAOFactory;
-const chainID = 31415;
+const chainID = 3141;
 
 export const useSmartContract = () => {
   const provider = new ethers.providers.JsonRpcProvider(
