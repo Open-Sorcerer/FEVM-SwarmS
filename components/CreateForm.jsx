@@ -6,7 +6,7 @@ import YourSwarmS from "./YourSwarms";
 import { useSmartContract } from "../hooks/useSmartContract";
 const BreadCrumb = (props) => {
   const { setActiveTab } = props;
-  const tabItems = ["Create Yo Crew", "Appoint Captain"];
+  const tabItems = ["Create Yo Swarmm", "Appoint Captain"];
   return (
     <nav
       classNameName="flex justify-start items-center"
@@ -46,7 +46,7 @@ const BreadCrumb = (props) => {
   );
 };
 
-const CrewDesc = (props) => {
+const SwarmDesc = (props) => {
   const {
     activeTab,
     setActiveTab,
@@ -56,8 +56,8 @@ const CrewDesc = (props) => {
     setDesc,
     address,
     setAddress,
-    setIsCrewCreated,
-    setMakeNewCrew,
+    setIsSwarmmmCreated,
+    setMakeNewSwarm,
   } = props;
   const { createDataDao } = useSmartContract();
   return (
@@ -65,8 +65,8 @@ const CrewDesc = (props) => {
       <div className="w-full h-full flex flex-col justify-evenly items-start gap-10">
         {activeTab === 0 && (
           <div className="w-full h-full flex flex-col justify-start items-start gap-1 sm:gap-3">
-            <h1 className="text-2xl text-white">Name Yo Crew</h1>
-            <p>What do you wanna name yo Crew?</p>
+            <h1 className="text-2xl text-white">Name Yo Swarm</h1>
+            <p>What do you wanna name yo Swarmm?</p>
             <div className="user-box w-full md:w-1/3">
               <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
                 <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -79,14 +79,14 @@ const CrewDesc = (props) => {
                   onInput={(e) => setName(e.target.value)}
                   value={name}
                 ></input>
-                <label className="px-5">{"Crew Name *"}</label>
+                <label className="px-5">{"Swarm Name *"}</label>
               </div>
             </div>
             <h1 className="text-2xl text-white">
-              Set a cool new description for yo crew
+              Set a cool new description for yo Swarm
             </h1>
             <p>
-              What do you want your awesome crew to be commemorated by? <br />
+              What do you want your awesome Swarmmmm to be commemorated by? <br />
               (Could be a fearsome motto or just some silly, sarcastic quips)
             </p>
             <div className="user-box w-full md:w-1/3">
@@ -101,7 +101,7 @@ const CrewDesc = (props) => {
                   onInput={(e) => setDesc(e.target.value)}
                   value={desc}
                 ></textarea>
-                <label className="px-5">{"Crew Description *"}</label>
+                <label className="px-5">{"Swarm Description *"}</label>
               </div>
             </div>
             <div className="w-full h-full flex flex-col sm:flex-row justify-end items-center gap-3">
@@ -110,9 +110,9 @@ const CrewDesc = (props) => {
                 <span className="absolute rounded-lg inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-tertiary"></span>
                 <button
                   className="relative text-black text-xl font-semibold"
-                  onClick={() => setMakeNewCrew(false)}
+                  onClick={() => setMakeNewSwarm(false)}
                 >
-                  Abort Crew Creation
+                  Abort Swarmm Creation
                 </button>
               </div>
 
@@ -132,9 +132,9 @@ const CrewDesc = (props) => {
 
         {activeTab === 1 && (
           <div className="w-full h-full flex flex-col justify-start items-start gap-5">
-            <h1 className="text-2xl text-white">Add Crew Captain's Address</h1>
+            <h1 className="text-2xl text-white">Add Swarm Captain's Address</h1>
             <p>
-              This address will be treated as the crew's admin and can NOT be
+              This address will be treated as the Swarm's admin and can NOT be
               changed later
             </p>
             <div className="user-box w-full md:w-1/3">
@@ -180,7 +180,7 @@ const CrewDesc = (props) => {
 
         {activeTab === 2 && (
           <div className="w-full h-full flex flex-col justify-start items-start gap-3 sm:gap-5">
-            <h1 className="text-2xl text-white">Your Awesome Crew's Name</h1>
+            <h1 className="text-2xl text-white">Your Awesome Swarm's Name</h1>
             <div className="user-box w-full md:w-1/3">
               <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
                 <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -195,7 +195,7 @@ const CrewDesc = (props) => {
               </div>
             </div>
             <h1 className="text-2xl text-white">
-              Crew's Vision/Motto/Description
+              Swarm's Vision/Motto/Description
             </h1>
             <div className="user-box w-full md:w-1/3">
               <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
@@ -211,7 +211,7 @@ const CrewDesc = (props) => {
                 </textarea>
               </div>
             </div>
-            <h1 className="text-2xl text-white">Crew's Captain</h1>
+            <h1 className="text-2xl text-white">Swarmm's Captain</h1>
             <div className="w-full h-full flex flex-col sm:flex-row justify-evenly items-center gap-2">
               <div className="user-box w-full md:w-1/3">
                 <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
@@ -245,7 +245,7 @@ const CrewDesc = (props) => {
                     className="relative text-black text-xl font-semibold"
                     onClick={() => {
                       createDataDao(address);
-                      setIsCrewCreated(true);
+                      setIsSwarmmCreated(true);
                     }}
                   >
                     Brace Yo'selves!
@@ -261,15 +261,15 @@ const CrewDesc = (props) => {
 };
 
 const CreateForm = (props) => {
-  const { setMakeNewCrew } = props;
+  const { setMakeNewSwarm } = props;
   const [activeTab, setActiveTab] = useState(0);
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [address, setAddress] = useState("");
-  const [isCrewCreated, setIsCrewCreated] = useState(false);
+  const [isSwarmCreated, setIsSwarmCreated] = useState(false);
   return (
     <>
-      {!isCrewCreated ? (
+      {!isSwarmCreated ? (
         <div className="w-screen h-screen flex justify-center items-start">
           <div className="w-full h-fit sm:w-10/12 sm:h-10/12 flex justify-evenly items-center mt-20 sm:mt-0 backdrop-blur-md bg-quaternary/60 rounded-xl text-white border border-secondary/40 hover:border-secondary/70">
             <div
@@ -281,7 +281,7 @@ const CreateForm = (props) => {
               </h1>
               <div className="w-full h-full flex flex-col justify-start items-start p-1 sm:p-10 gap-2 sm:gap-10">
                 <BreadCrumb setActiveTab={setActiveTab} activeTab={activeTab} />
-                <CrewDesc
+                <SwarmDesc
                   activeTab={activeTab}
                   setActiveTab={setActiveTab}
                   name={name}
@@ -290,8 +290,8 @@ const CreateForm = (props) => {
                   setDesc={setDesc}
                   address={address}
                   setAddress={setAddress}
-                  setIsCrewCreated={setIsCrewCreated}
-                  setMakeNewCrew={setMakeNewCrew}
+                  setIsSwarmCreated={setIsSwarmCreated}
+                  setMakeNewSwarm={setMakeNewSwarm}
                   // createDataDAO={createDataDao}
                 />
               </div>

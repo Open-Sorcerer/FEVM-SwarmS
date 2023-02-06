@@ -52,7 +52,7 @@ if (typeof window !== "undefined") {
 const Spline = () => {
   return (
     <div className="h-screen">
-      <SplineObj scene={"/CREWS.splinecode"} />
+      <SplineObj scene={"/swarms.splinecode"} />
     </div>
   );
 };
