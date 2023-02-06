@@ -1,7 +1,7 @@
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import YourCrews from "./YourCrews";
+import YourSwarmS from "./YourSwarms";
 
 import { useSmartContract } from "../hooks/useSmartContract";
 const BreadCrumb = (props) => {
@@ -277,7 +277,7 @@ const CreateForm = (props) => {
               className="w-full h-full flex flex-col justify-evenly items-center p-2 sm:p-5"
             >
               <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-white font-raleway">
-                Create yo DataDAO with CrewS with a few Clicks
+                Create yo DataDAO with SwarmS with a few Clicks
               </h1>
               <div className="w-full h-full flex flex-col justify-start items-start p-1 sm:p-10 gap-2 sm:gap-10">
                 <BreadCrumb setActiveTab={setActiveTab} activeTab={activeTab} />
@@ -299,7 +299,7 @@ const CreateForm = (props) => {
           </div>
         </div>
       ) : (
-        <YourCrews />
+        <YourSwarmS />
       )}
     </>
   );

@@ -1,8 +1,8 @@
 # SwarmS
 
-SwarmS is a No Code Tool to create Data DAOs. With CrewS you can take your crew on chain quickly to manage data along with governance.
+SwarmS is a No Code Tool to create Data DAOs. With SwarmS you can take your crew on chain quickly to manage data along with governance.
 
-![CrewS](https://user-images.githubusercontent.com/71517788/205465112-8cbbbe99-d909-4f16-b672-d5e013d9f86d.png)
+![SwarmS](https://user-images.githubusercontent.com/71517788/205465112-8cbbbe99-d909-4f16-b672-d5e013d9f86d.png)
 
 ## Features
 
